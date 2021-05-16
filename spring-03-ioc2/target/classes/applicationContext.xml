@@ -1,0 +1,31 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--  第一种方法：下标赋值  -->
+<!--    <bean id="user" class="com.guo.pojo.User">-->
+<!--        <constructor-arg index="0" value="郭海亮"/>-->
+<!--        <property name="name" value="Coder Guo" />-->
+<!--    </bean>-->
+<!--根据类型进行匹配-->
+<!--    <bean id="user" class="com.guo.pojo.User">-->
+<!--        <constructor-arg type="java.lang.String" value="用type匹配"/>-->
+<!--    </bean>-->
+
+<!--  通过参数名进行匹配  -->
+    <bean id="user" class="com.guo.pojo.User">
+        <constructor-arg name="name" value="Coder Guo" />
+        <property name="name" value="guohailiang" />
+    </bean>
+
+
+<!--  使用别名  -->
+    <alias name="user" alias="userNew"/>
+
+<!--
+id： bean的唯一标识符，也相当于变量名
+class： bean对象所对应的全限定名-包名+类名
+name： 别名,而且name可以同时取多个别名
+-->
+    <bean id="userT" class="com.guo.pojo.UserT" name="userT2,ut2 ut3" />
+</beans>
